@@ -1,20 +1,39 @@
 {
-  "name": "react-from-html",
+  "name": "@bitjourney/react-from-html",
   "version": "0.1.0",
-  "description": "Builds React Elements from HTML snippets",
-  "main": "index.js",
+  "description": "Builds React Elements from HTML snippets, optimized for TypeScript projects",
+  "main": "dist/index.js",
   "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "lint:fix": "npm run lint --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "contributors": [
+    {
+      "name": "FUJI Goro",
+      "email": "goro-fuji@bitjourney.com"
+    }
+  ],
   "license": "ISC",
+  "dependencies": {
+    "tslib": "^1.9.2"
+  },
+  "peerDependencies": {
+    "@types/react": "^16.4.0",
+    "@types/react-dom": "^16.0.6",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
   "devDependencies": {
+    "@types/jsdom": "^11.0.5",
+    "@types/react": "^16.4.0",
+    "@types/react-dom": "^16.0.6",
+    "jsdom": "^11.11.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "ts-node": "^6.1.1",
+    "tslint": "^5.10.0",
+    "tslint-config-prettier": "^1.13.0",
     "typescript": "^2.9.2"
-  },
-  "dependencies": {
-    "tslib": "^1.9.2"
   }
 }
