@@ -1,0 +1,26 @@
+{
+  "editor.renderWhitespace": "all",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "files.trimTrailingWhitespace": true,
+  "files.autoSave": "onFocusChange",
+  "files.exclude": {
+    ".idea/": true
+  },
+  "search.exclude": {
+    "dist/": true
+  },
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "tslint.autoFixOnSave": true,
+  "tslint.alwaysShowRuleFailuresAsWarnings": true,
+  "editor.formatOnSave": false,
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": false // because it depends on the order
+  }
+}

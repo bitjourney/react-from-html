@@ -1,3 +1,4 @@
+import "./setup";
 
 import { ReactFromHtml } from "../src";
 import ReactDOM from "react-dom";
@@ -5,9 +6,12 @@ import { JSDOM } from "jsdom";
 
 const reactFromHtml = new ReactFromHtml();
 
-const { window } = new JSDOM('<html/>');
-const container = window.document.createElement('div');
+const { window } = new JSDOM("<html/>");
 
-ReactDOM.render(reactFromHtml.parse("<p>Hello, world!>"), container);
+Object.assign(global, window);
+
+const container = window.document.createElement("div");
+
+ReactDOM.render(reactFromHtml.parse("<p>Hello, world!</p>"), container);
 
 console.log(container.innerHTML);

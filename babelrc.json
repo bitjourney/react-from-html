@@ -1,0 +1,11 @@
+{
+  "presets": ["@babel/preset-flow", "@babel/preset-env"],
+  "plugins": [
+    [
+      "inline-replace-variables",
+      {
+        "__DEV__": false
+      }
+    ]
+  ]
+}

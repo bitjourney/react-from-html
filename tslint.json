@@ -17,7 +17,7 @@
     "class-name": false,
     "cyclomatic-complexity": {
       "severity": "warning",
-      "options": 12
+      "options": 17
     },
     "comment-format": [
       false
@@ -97,7 +97,9 @@
     "restrict-plus-operands": false,
     "return-undefined": true,
     "strict-boolean-expressions": false,
-    "deprecation": true,
+    "deprecation": {
+      "severity": "warning",
+    },
     "prefer-readonly": true,
     "prefer-object-spread": true,
     "no-duplicate-variable": true,
