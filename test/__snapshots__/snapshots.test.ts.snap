@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReactFromHtml#parse renders <script/> with dangerouslySetInnerHTML 1`] = `
+<script
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "console.log('Hello <strong>React</strong> world!');",
+    }
+  }
+/>
+`;
+
+exports[`ReactFromHtml#parse renders <style/> with dangerouslySetInnerHTML 1`] = `
+<style
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "/* Hello <strong>React</strong> world! */",
+    }
+  }
+/>
+`;
+
+exports[`ReactFromHtml#parse renders <textarea/> with defaultValue, instead of children 1`] = `
+<textarea
+  defaultValue="/* Hello <strong>React</strong> world! */"
+/>
+`;
+
+exports[`ReactFromHtml#parse renders multiple blocks of HTML elements correctly 1`] = `
+Array [
+  "
+          ",
+  <p>
+    Hello, 
+    <strong>
+      React
+    </strong>
+     world!
+  </p>,
+  "
+          ",
+  <p>
+    Hello, 
+    <strong>
+      React
+    </strong>
+     world!
+  </p>,
+  "
+          ",
+  <p>
+    Hello, 
+    <strong>
+      React
+    </strong>
+     world!
+  </p>,
+  "
+        ",
+]
+`;
+
+exports[`ReactFromHtml#parse renders single block of HTML elements correctly 1`] = `
+<p>
+  Hello, 
+  <strong>
+    React
+  </strong>
+   world!
+</p>
+`;

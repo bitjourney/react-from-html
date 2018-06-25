@@ -26,6 +26,7 @@ export class ReactFromHtml {
     extraProps: Readonly<DynamicProps>
   ): React.ReactNode {
     const props: DynamicProps = {};
+    const children = [];
 
     if (element.nodeName === "SCRIPT" || element.nodeName === "STYLE") {
       if (element.firstChild) {
@@ -37,9 +38,9 @@ export class ReactFromHtml {
       if (element.firstChild) {
         props.defaultValue = (element.firstChild as Text).data;
       }
+    } else {
+      children.push(...this.nodesToReactNodes(element.childNodes));
     }
-
-    const children = this.nodesToReactNodes(element.childNodes);
 
     return React.createElement(
       element.nodeName.toLowerCase(),
@@ -65,7 +66,7 @@ export class ReactFromHtml {
     return reactNodes;
   }
 
-  parse(html: string): React.ReactElement<DynamicProps> {
+  public parse(html: string): React.ReactElement<DynamicProps> {
     const nodeList = parseHtml(html);
     return <>{this.nodesToReactNodes(nodeList)}</>;
   }
