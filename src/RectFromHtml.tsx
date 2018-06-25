@@ -19,7 +19,7 @@ export class ReactFromHtml {
     extraProps: Readonly<DynamicProps>
   ): React.ReactNode {
     const props: DynamicProps = {};
-    const children = [];
+    const children = [] as Array<React.ReactNode>;
 
     if (element.nodeName === "SCRIPT" || element.nodeName === "STYLE") {
       if (element.firstChild) {
@@ -53,7 +53,7 @@ export class ReactFromHtml {
   nodesToReactNodes(nodes: ArrayLike<Node>): Array<React.ReactNode> {
     const reactNodes: Array<React.ReactNode> = [];
     for (let i = 0, len = nodes.length; i < len; i++) {
-      let reactNode = this.nodeToReactNode(nodes[i], { key: i });
+      let reactNode = this.replace(nodes[i], { key: i });
       reactNodes.push(reactNode);
     }
     return reactNodes;
