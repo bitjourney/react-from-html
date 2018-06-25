@@ -64,9 +64,6 @@
     "typedef-whitespace": [
       false
     ],
-    "variable-name": [
-      "allow-snake-case"
-    ],
     "whitespace": [
       true,
       "check-branch",
@@ -98,7 +95,7 @@
     "return-undefined": true,
     "strict-boolean-expressions": false,
     "deprecation": {
-      "severity": "warning",
+      "severity": "warning"
     },
     "prefer-readonly": true,
     "prefer-object-spread": true,

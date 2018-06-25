@@ -1,7 +1,7 @@
 import React from "react";
 import { parseHtml } from "./parseHtml";
 import { DynamicProps } from "./DynamicProps";
-import { attributesToProps } from "./attributesToProps";
+import { extractPropsFromElement } from "./extractPropsFromElement";
 
 export interface ReactFromHtmlOptions {
   replace?(node: Node, props: object): React.ReactChild;
@@ -14,11 +14,11 @@ export class ReactFromHtml {
     this.replace = options.replace || this.nodeToReactNode.bind(this);
   }
 
-  elementToReactNode(
+  private elementToReactNode(
     element: Readonly<Element>,
     extraProps: Readonly<DynamicProps>
   ): React.ReactNode {
-    const props: DynamicProps = {};
+    const props = {} as DynamicProps;
     const children = [] as Array<React.ReactNode>;
 
     if (element.nodeName === "SCRIPT" || element.nodeName === "STYLE") {
@@ -37,12 +37,12 @@ export class ReactFromHtml {
 
     return React.createElement(
       element.nodeName.toLowerCase(),
-      { ...attributesToProps(element.attributes), ...props, ...extraProps },
+      { ...extractPropsFromElement(element), ...props, ...extraProps },
       ...children
     );
   }
 
-  nodeToReactNode(node: Node, props: DynamicProps): React.ReactNode {
+  private nodeToReactNode(node: Node, props: DynamicProps): React.ReactNode {
     if (node.nodeName === "#text") {
       return (node as Text).data;
     } else {
@@ -50,10 +50,10 @@ export class ReactFromHtml {
     }
   }
 
-  nodesToReactNodes(nodes: ArrayLike<Node>): Array<React.ReactNode> {
+  private nodesToReactNodes(nodes: ArrayLike<Node>): Array<React.ReactNode> {
     const reactNodes: Array<React.ReactNode> = [];
     for (let i = 0, len = nodes.length; i < len; i++) {
-      let reactNode = this.replace(nodes[i], { key: i });
+      const reactNode = this.replace(nodes[i], { key: i });
       reactNodes.push(reactNode);
     }
     return reactNodes;
