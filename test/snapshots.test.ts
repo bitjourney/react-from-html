@@ -59,4 +59,20 @@ describe("ReactFromHtml#parse", () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it("renders <svg/> correctly", () => {
+    const tree = renderer
+      .create(
+        reactFromHtml.parse(
+          `
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="60" height="60">
+            <rect width="60" height="60"/>
+            <text text-anchor="middle" alignment-baseline="central" x="30" y="30" style="font-size: 15;fill: #327ac2;">Hello, world!</text>
+          </svg>
+        `
+        )
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

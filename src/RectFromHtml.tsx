@@ -14,13 +14,6 @@ export class ReactFromHtml {
     this.replace = options.replace || this.nodeToReactNode.bind(this);
   }
 
-  svgElementToReactNode(
-    element: Readonly<SVGElement>,
-    props: Readonly<DynamicProps>
-  ): React.ReactNode {
-    return "";
-  }
-
   elementToReactNode(
     element: Readonly<Element>,
     extraProps: Readonly<DynamicProps>

@@ -20,6 +20,27 @@ exports[`ReactFromHtml#parse renders <style/> with dangerouslySetInnerHTML 1`] =
 />
 `;
 
+exports[`ReactFromHtml#parse renders <svg/> correctly 1`] = `
+Array [
+  "
+            ",
+  <svg>
+    
+            
+    <rect />
+    
+            
+    <text>
+      Hello, world!
+    </text>
+    
+          
+  </svg>,
+  "
+        ",
+]
+`;
+
 exports[`ReactFromHtml#parse renders <textarea/> with defaultValue, instead of children 1`] = `
 <textarea
   defaultValue="/* Hello <strong>React</strong> world! */"
