@@ -1,3 +1,4 @@
+import "tsconfig-paths/register";
 import renderer from "react-test-renderer";
 import { ReactFromHtml } from "../src";
 
@@ -7,7 +8,9 @@ describe("ReactFromHtml#parse", () => {
   it("renders single block of HTML elements correctly", () => {
     const tree = renderer
       .create(
-        reactFromHtml.parse("<p>Hello, <strong>React</strong> world!</p>")
+        reactFromHtml.parse(
+          "<p class='hello'>Hello, <strong>React</strong> world!</p>"
+        )
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -63,7 +66,7 @@ describe("ReactFromHtml#parse", () => {
     const tree = renderer
       .create(
         reactFromHtml.parse(`
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="60" height="60">
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="60" height="60">
             <rect width="60" height="60"/>
             <text text-anchor="middle" alignment-baseline="central" x="30" y="30" style="font-size: 15;fill: #327ac2;">Hello, world!</text>
           </svg>

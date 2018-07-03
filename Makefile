@@ -13,5 +13,9 @@ build: build/react-dom-shared build/shared
 	for flowjs in vendor/react/packages/shared/*.js ; \
 		do npx babel --config-file ./babelrc.json $$flowjs -o build/shared/`basename $$flowjs` ; \
 	done
+	echo "exports.properties = properties;" >> build/react-dom-shared/DOMProperty.js
 
-.PHONEY: all build
+clean:
+	rm -rf build dist
+
+.PHONEY: all build clean
