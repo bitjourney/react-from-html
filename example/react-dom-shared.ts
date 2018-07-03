@@ -6,3 +6,5 @@ console.log("---------");
 console.log(DOMProperty.getPropertyInfo("style"));
 console.log(DOMProperty.getPropertyInfo("dangerouslySetInnerHTML"));
 console.log(DOMProperty.getPropertyInfo("acceptCharset"));
+console.log(DOMProperty.getPropertyInfo("id"));
+console.log(DOMProperty.getPropertyInfo("htmlFor"));

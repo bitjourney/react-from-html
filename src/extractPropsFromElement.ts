@@ -36,7 +36,6 @@ function parseStyle(style: CSSStyleDeclaration): { [name: string]: any } {
     const name = style[i];
     styleObject[toReactStyleName(name)] = style.getPropertyValue(name);
   }
-  console.log(style);
   return styleObject;
 }
 

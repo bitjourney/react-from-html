@@ -15,6 +15,11 @@
       "email": "goro-fuji@bitjourney.com"
     }
   ],
+  "keywords": [
+    "react",
+    "dangerouslySetInnerHTML",
+    "html2react"
+  ],
   "license": "ISC",
   "dependencies": {
     "tslib": "^1"
