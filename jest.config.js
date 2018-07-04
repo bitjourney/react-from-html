@@ -20,7 +20,7 @@ module.exports = {
   testPathIgnorePatterns: [...defaults.testPathIgnorePatterns, "/vendor/"],
   testRegex: "\\.test\\.tsx?$",
   moduleNameMapper: {
-    "react-dom-shared/(.*)": "<rootDir>/build/react-dom-shared/$1",
-    "shared/(.*)": "<rootDir>/build/shared/$1",
+    "react-dom-shared/(.*)": "<rootDir>/vendor-build/react-dom-shared/$1",
+    "shared/(.*)": "<rootDir>/vendor-build/shared/$1",
   },
 };

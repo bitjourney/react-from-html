@@ -2,8 +2,9 @@
   "name": "@bitjourney/react-from-html",
   "version": "0.1.0",
   "description": "Builds React Elements from HTML snippets, optimized for TypeScript projects",
-  "main": "dist/index.js",
+  "main": "dist/react-from-html.js",
   "scripts": {
+    "build": "webpack --mode production --config webpack.config.js && webpack --mode development --config webpack.config.js",
     "lint": "tslint --project tsconfig.json 'src/**/*' 'test/**/*' 'example/**/*'",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest",
@@ -21,9 +22,7 @@
     "html2react"
   ],
   "license": "ISC",
-  "dependencies": {
-    "tslib": "^1"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "@types/react": "^16",
     "@types/react-dom": "^16",
@@ -35,20 +34,24 @@
     "@babel/core": "^7.0.0-beta.51",
     "@babel/preset-env": "^7.0.0-beta.51",
     "@babel/preset-flow": "^7.0.0-beta.51",
-    "@types/jest": "^23.1.1",
+    "@types/jest": "^23",
     "@types/react": "^16",
     "@types/react-dom": "^16",
-    "babel-plugin-inline-replace-variables": "^1.3.1",
-    "jest": "^23.1.0",
+    "awesome-typescript-loader": "^5",
+    "babel-plugin-inline-replace-variables": "^1",
+    "jest": "^23",
     "jsdom": "^11",
     "react": "^16",
     "react-dom": "^16",
-    "react-test-renderer": "^16.4.1",
-    "ts-jest": "^22.4.6",
+    "react-test-renderer": "^16",
+    "ts-jest": "^22",
     "ts-node": "^6",
-    "tsconfig-paths": "^3.4.0",
+    "tsconfig-paths": "^3",
     "tslint": "^5",
     "tslint-config-prettier": "^1",
-    "typescript": "^2"
+    "typescript": "^2",
+    "webpack": "^4",
+    "webpack-cli": "^3",
+    "webpack-serve": "^1"
   }
 }
