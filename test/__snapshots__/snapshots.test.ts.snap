@@ -78,16 +78,6 @@ exports[`ReactFromHtml#parse renders for as htmlFor 1`] = `
 </label>
 `;
 
-exports[`ReactFromHtml#parse renders htmlFor as for 1`] = `
-<label
-  htmlFor="foo"
->
-  <input
-    id="foo"
-  />
-</label>
-`;
-
 exports[`ReactFromHtml#parse renders multiple blocks of HTML elements correctly 1`] = `
 Array [
   "
