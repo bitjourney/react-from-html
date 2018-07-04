@@ -83,7 +83,7 @@ describe("ReactFromHtml#parse", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  fit("renders htmlFor as for", () => {
+  fit("renders for as htmlFor", () => {
     const tree = renderer
       .create(reactFromHtml.parse("<label for='foo'><input id='foo'/></label>"))
       .toJSON();

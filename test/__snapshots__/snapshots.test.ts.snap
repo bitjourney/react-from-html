@@ -68,6 +68,16 @@ exports[`ReactFromHtml#parse renders <textarea/> with defaultValue, instead of c
 />
 `;
 
+exports[`ReactFromHtml#parse renders for as htmlFor 1`] = `
+<label
+  htmlFor="foo"
+>
+  <input
+    id="foo"
+  />
+</label>
+`;
+
 exports[`ReactFromHtml#parse renders htmlFor as for 1`] = `
 <label
   htmlFor="foo"
