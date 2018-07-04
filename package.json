@@ -2,7 +2,7 @@
   "name": "@bitjourney/react-from-html",
   "version": "0.1.0",
   "description": "Builds React Elements from HTML snippets, optimized for TypeScript projects",
-  "main": "dist/react-from-html.js",
+  "main": "index.js",
   "scripts": {
     "build": "webpack --mode production --config webpack.config.js && webpack --mode development --config webpack.config.js",
     "lint": "tslint --project tsconfig.json 'src/**/*' 'test/**/*' 'example/**/*'",
@@ -53,5 +53,6 @@
     "webpack": "^4",
     "webpack-cli": "^3",
     "webpack-serve": "^1"
-  }
+  },
+  "sideEffects": true
 }

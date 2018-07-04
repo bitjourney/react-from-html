@@ -10,7 +10,7 @@ module.exports = (env, argv) => {
 
     output: {
       path: path.resolve(__dirname, "dist"),
-      filename: `react-from-html-${argv.mode}.js`,
+      filename: `react-from-html.${argv.mode}.js`,
       libraryTarget: "commonjs",
     },
 
@@ -33,6 +33,7 @@ module.exports = (env, argv) => {
           use: {
             loader: "awesome-typescript-loader",
             options: {
+              configFileName: "tsconfig.webpack.json",
               useCache: true,
             },
           },

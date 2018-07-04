@@ -1,1 +1,1 @@
-export { ReactFromHtml } from "./RectFromHtml";
+export { ReactFromHtml } from "./ReactFromHtml";
