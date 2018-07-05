@@ -14,7 +14,8 @@
     "test:dist:development": "TEST_DIST=true NODE_ENV=development jest",
     "test:dist:production": "TEST_DIST=true NODE_ENV=production jest",
     "test:watch": "jest --watch",
-    "test:updateSnapshot": "jest --updateSnapshot"
+    "test:updateSnapshot": "jest --updateSnapshot",
+    "prepack": "npm run build"
   },
   "contributors": [
     {
@@ -28,6 +29,9 @@
     "html2react"
   ],
   "license": "ISC",
+  "files": [
+    "dist"
+  ],
   "dependencies": {},
   "peerDependencies": {
     "@types/react": "^16",
