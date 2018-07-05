@@ -2,4 +2,5 @@ dist/
 build/
 vendor-build
 node_modules/
-.awcache
+coverage/
+.awcache/
