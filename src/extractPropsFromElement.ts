@@ -30,7 +30,9 @@ function toReactStyleName(name: string) {
   });
 }
 
-function parseStyle(style: CSSStyleDeclaration): { [name: string]: any } {
+function convetCssomToReactStyleObject(
+  style: CSSStyleDeclaration
+): { [name: string]: any } {
   const styleObject = {} as { [name: string]: any };
   for (let i = 0, len = style.length; i < len; i++) {
     const name = style[i];
@@ -57,7 +59,7 @@ function attrToProp(element: Element, attr: Attr): Prop | null {
       if (record.propertyName === "style") {
         return {
           name,
-          value: parseStyle(element["style"])
+          value: convetCssomToReactStyleObject(element["style"])
         };
       }
       return null; // ignore reserved prop name, e.g.dangerouslySetInnerHTML
