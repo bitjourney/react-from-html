@@ -5,7 +5,11 @@
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "onFocusChange",
   "files.exclude": {
-    ".idea/": true
+    ".idea/": true,
+    "vendor": true,
+    "vendor-build": true,
+    "build": true,
+    "dist": true
   },
   "search.exclude": {
     "dist/": true
