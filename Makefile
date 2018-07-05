@@ -15,7 +15,7 @@ vendor-build: vendor-build/react-dom-shared vendor-build/shared
 	done
 	echo "exports.properties = properties;" >> vendor-build/react-dom-shared/DOMProperty.js
 
-build: vendor-build
+build:
 	npm run build
 
 test: build

@@ -89,4 +89,15 @@ describe("ReactFromHtml#parse", () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it("renders elements with the style attribute", () => {
+    const tree = renderer
+      .create(
+        reactFromHtml.parse(
+          "<label style='color: red; font-size: 20px; -webkit-font-smoothing: antialiased'>Hello, world!</div>"
+        )
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
