@@ -17,6 +17,6 @@ describe("ReactFromHtml#parse", () => {
     const html = ReactDOMServer.renderToStaticMarkup(
       reactFromHtml.parse("Hello, <script>alert('script!')</script> world!")
     );
-    expect(html).toStrictEqual("Hello, --censored-- world!");
+    expect(html).toStrictEqual("<div>Hello, --censored-- world!</div>");
   });
 });

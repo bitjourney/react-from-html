@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ReactFromHtml#parse renders a simple SVG 1`] = `
-Array [
-  "
-          ",
+<div>
+  
+          
   <svg
     baseProfile="full"
     height="200"
@@ -39,16 +39,16 @@ Array [
     </text>
     
           
-  </svg>,
-  "
-          ",
-]
+  </svg>
+  
+          
+</div>
 `;
 
 exports[`ReactFromHtml#parse renders an SVG with style attributes 1`] = `
-Array [
-  "
-          ",
+<div>
+  
+          
   <svg
     height="60"
     version="1.1"
@@ -74,16 +74,16 @@ Array [
     </text>
     
           
-  </svg>,
-  "
-        ",
-]
+  </svg>
+  
+        
+</div>
 `;
 
 exports[`ReactFromHtml#parse renders an SVG with style attributes 2`] = `
-Array [
-  "
-          ",
+<div>
+  
+          
   <svg
     height="200"
     version="1.1"
@@ -103,8 +103,8 @@ Array [
     />
     
          
-  </svg>,
-  "
-        ",
-]
+  </svg>
+  
+        
+</div>
 `;

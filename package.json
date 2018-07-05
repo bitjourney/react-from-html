@@ -1,6 +1,6 @@
 {
   "name": "@bitjourney/react-from-html",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Builds React elements from HTML snippets, or a safe dangerouslySetInnerHTML alternative ",
   "main": "index.js",
   "scripts": {
@@ -34,10 +34,10 @@
   ],
   "dependencies": {},
   "peerDependencies": {
-    "@types/react": "^16",
-    "@types/react-dom": "^16",
-    "react": "^16",
-    "react-dom": "^16"
+    "@types/react": ">=15",
+    "@types/react-dom": ">=15",
+    "react": ">=15",
+    "react-dom": ">=15"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.51",
@@ -45,15 +45,16 @@
     "@babel/preset-env": "^7.0.0-beta.51",
     "@babel/preset-flow": "^7.0.0-beta.51",
     "@types/jest": "^23",
-    "@types/react": "^16",
-    "@types/react-dom": "^16",
+    "@types/node": "^8",
+    "@types/react": "^15",
+    "@types/react-dom": "^15",
     "awesome-typescript-loader": "^5",
     "babel-plugin-inline-replace-variables": "^1",
     "jest": "^23",
     "jsdom": "^11",
-    "react": "^16",
-    "react-dom": "^16",
-    "react-test-renderer": "^16",
+    "react": "^15",
+    "react-dom": "^15",
+    "react-test-renderer": "^15",
     "ts-jest": "^22",
     "ts-node": "^6",
     "tsconfig-paths": "^3",

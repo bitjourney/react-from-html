@@ -61,6 +61,7 @@ export class ReactFromHtml {
 
   public parse(html: string): React.ReactElement<DynamicProps> {
     const nodeList = parseHtml(html);
-    return <>{this.nodesToReactNodes(nodeList)}</>;
+    // TODO: will use React.Fragment on react-from-html v1.0.0, dropping support of React v15
+    return <div>{this.nodesToReactNodes(nodeList)}</div>;
   }
 }
