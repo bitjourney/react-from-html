@@ -42,7 +42,7 @@ export class ReactFromHtml {
     );
   }
 
-  private nodeToReactNode(node: Node, props: DynamicProps): React.ReactNode {
+  public nodeToReactNode(node: Node, props: DynamicProps): React.ReactNode {
     if (node.nodeName === "#text") {
       return (node as Text).data;
     } else {
