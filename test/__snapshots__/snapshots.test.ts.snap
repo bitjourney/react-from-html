@@ -68,6 +68,19 @@ exports[`ReactFromHtml#parse renders <textarea/> with defaultValue, instead of c
 />
 `;
 
+exports[`ReactFromHtml#parse renders elements with the style attribute 1`] = `
+<label
+  style={
+    Object {
+      "color": "red",
+      "fontSize": "20px",
+    }
+  }
+>
+  Hello, world!
+</label>
+`;
+
 exports[`ReactFromHtml#parse renders for as htmlFor 1`] = `
 <label
   htmlFor="foo"
