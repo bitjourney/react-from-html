@@ -60,5 +60,5 @@
     "webpack-cli": "^3",
     "webpack-serve": "^1"
   },
-  "sideEffects": true
+  "sideEffects": false
 }
