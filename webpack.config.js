@@ -19,6 +19,12 @@ module.exports = (env, argv) => {
       extensions: [".js", ".ts", ".tsx"],
     },
 
+    externals: {
+      react: {
+        commonjs: 'react',
+      },
+    },
+
     plugins: [
       new atLoader.CheckerPlugin(),
       new webpack.optimize.LimitChunkCountPlugin({
