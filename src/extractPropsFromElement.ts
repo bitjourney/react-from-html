@@ -31,6 +31,10 @@ interface Prop {
   value: any;
 }
 
+interface ReactStyleObject {
+  [name: string]: any;
+}
+
 // the inverse of react-dom's hyphenateStyleName()
 // e.g.
 // convertToReactStyleName("background-color") = "backgroundColor"
@@ -44,17 +48,31 @@ function convertToReactStyleName(name: string) {
     });
 }
 
-function convertToReactStyleValue(value: string) {}
+function looksLikeNumber(value: string): boolean {
+  const n = Number.parseFloat(value);
+  return Number.isFinite(n);
+}
+
+function convertToReactStyleValue(name: string, value: string) {
+  if (isUnitlessNumber[name] && looksLikeNumber(value)) {
+    return Number.parseFloat(value);
+  } else {
+    return value;
+  }
+}
 
 function convetCssomToReactStyleObject(
   style: CSSStyleDeclaration
-): { [name: string]: any } {
+): ReactStyleObject {
   const styleObject = {} as { [name: string]: any };
   for (let i = 0, len = style.length; i < len; i++) {
     const name = style[i];
     const value = style.getPropertyValue(name);
     const reactStyleName = convertToReactStyleName(name);
-    styleObject[reactStyleName] = isUnitlessNumber[name] ? +value : value;
+    styleObject[reactStyleName] = convertToReactStyleValue(
+      reactStyleName,
+      value
+    );
   }
   return styleObject;
 }

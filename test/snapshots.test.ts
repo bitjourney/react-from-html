@@ -84,7 +84,7 @@ describe("ReactFromHtml#parse", () => {
     const tree = renderer
       .create(
         reactFromHtml.parse(
-          "<label style='color: red; font-size: 20px; -webkit-font-smoothing: antialiased; opacity: 0.5'>Hello, world!</div>"
+          "<label style='color: red; font-size: 20px; -webkit-font-smoothing: antialiased; opacity: 0.5; font-weight: normal; z-index: 99'>Hello, world!</div>"
         )
       )
       .toJSON();

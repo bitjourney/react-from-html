@@ -41,7 +41,9 @@ exports[`ReactFromHtml#parse renders elements with the style attribute 1`] = `
     Object {
       "color": "red",
       "fontSize": "20px",
+      "fontWeight": "normal",
       "opacity": 0.5,
+      "zIndex": 99,
     }
   }
 >
