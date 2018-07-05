@@ -1,5 +1,12 @@
 import { DynamicProps } from "./DynamicProps";
-import { RESERVED, properties } from "react-dom-shared/DOMProperty";
+import {
+  RESERVED,
+  BOOLEAN,
+  NUMERIC,
+  POSITIVE_NUMERIC,
+  properties
+} from "react-dom-shared/DOMProperty";
+import { isUnitlessNumber } from "react-dom-shared/CSSProperty";
 
 interface PropertyInfoRecord {
   type: number;
@@ -24,11 +31,20 @@ interface Prop {
   value: any;
 }
 
-function toReactStyleName(name: string) {
-  return name.replace(/-(\w)/, (_, firstChar: string) => {
-    return firstChar.toUpperCase();
-  });
+// the inverse of react-dom's hyphenateStyleName()
+// e.g.
+// convertToReactStyleName("background-color") = "backgroundColor"
+// convertToReactStyleName("-moz-transition") = "MozTransition"
+// convertToReactStyleName("-ms-transition") = "msTransition"
+function convertToReactStyleName(name: string) {
+  return name
+    .replace(/^-ms/, "ms")
+    .replace(/-(\w)/g, (_, firstChar: string) => {
+      return firstChar.toUpperCase();
+    });
 }
+
+function convertToReactStyleValue(value: string) {}
 
 function convetCssomToReactStyleObject(
   style: CSSStyleDeclaration
@@ -36,9 +52,26 @@ function convetCssomToReactStyleObject(
   const styleObject = {} as { [name: string]: any };
   for (let i = 0, len = style.length; i < len; i++) {
     const name = style[i];
-    styleObject[toReactStyleName(name)] = style.getPropertyValue(name);
+    const value = style.getPropertyValue(name);
+    const reactStyleName = convertToReactStyleName(name);
+    styleObject[reactStyleName] = isUnitlessNumber[name] ? +value : value;
   }
   return styleObject;
+}
+
+function convertAttrValueByType(
+  value: string | null | undefined,
+  type: number
+): any {
+  switch (type) {
+    case BOOLEAN:
+      return value != null;
+    case NUMERIC:
+    case POSITIVE_NUMERIC:
+      return +(value || 0);
+    default:
+      return value;
+  }
 }
 
 function attrToProp(element: Element, attr: Attr): Prop | null {
@@ -56,17 +89,18 @@ function attrToProp(element: Element, attr: Attr): Prop | null {
   const record = ATTR_MAP.get(name);
   if (record) {
     if (record.type === RESERVED) {
+      // RESERVED includes style, dangerouslySetInnerHTML, innerHTML, defaultValue, and so on.
       if (record.propertyName === "style") {
         return {
           name,
           value: convetCssomToReactStyleObject(element["style"])
         };
       }
-      return null; // ignore reserved prop name, e.g.dangerouslySetInnerHTML
+      return null; // ignores reserved prop name.
     } else {
       return {
         name: record.propertyName,
-        value: attr.value
+        value: convertAttrValueByType(attr.value, record.type)
       };
     }
   } else {

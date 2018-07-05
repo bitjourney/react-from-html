@@ -3,6 +3,8 @@
 exports[`ReactFromHtml#parse renders <input/> with defaultValue 1`] = `
 <input
   defaultValue="foo"
+  disabled={true}
+  size={10}
   type="text"
 />
 `;
@@ -74,6 +76,7 @@ exports[`ReactFromHtml#parse renders elements with the style attribute 1`] = `
     Object {
       "color": "red",
       "fontSize": "20px",
+      "opacity": 0.5,
     }
   }
 >

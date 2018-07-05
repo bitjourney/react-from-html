@@ -78,7 +78,11 @@ describe("ReactFromHtml#parse", () => {
 
   it("renders <input/> with defaultValue", () => {
     const tree = renderer
-      .create(reactFromHtml.parse("<input type='text' value='foo'/>"))
+      .create(
+        reactFromHtml.parse(
+          "<input type='text' value='foo' size='10' disabled/>"
+        )
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -94,7 +98,7 @@ describe("ReactFromHtml#parse", () => {
     const tree = renderer
       .create(
         reactFromHtml.parse(
-          "<label style='color: red; font-size: 20px; -webkit-font-smoothing: antialiased'>Hello, world!</div>"
+          "<label style='color: red; font-size: 20px; -webkit-font-smoothing: antialiased; opacity: 0.5'>Hello, world!</div>"
         )
       )
       .toJSON();
