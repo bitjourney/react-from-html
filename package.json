@@ -1,7 +1,7 @@
 {
   "name": "@bitjourney/react-from-html",
   "version": "0.1.0",
-  "description": "Builds React Elements from HTML snippets, optimized for TypeScript projects",
+  "description": "Builds React elements from HTML snippets, or a safe dangerouslySetInnerHTML alternative ",
   "main": "index.js",
   "scripts": {
     "build:vendor": "make vendor-build",
