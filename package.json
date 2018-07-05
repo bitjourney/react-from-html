@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build:vendor": "make vendor-build",
-    "build": "webpack --mode production --config webpack.config.js && webpack --mode development --config webpack.config.js",
+    "build": "make vendor-build && npm run build:production && npm run build:development",
+    "build:production": "webpack --mode production --config webpack.config.js",
+    "build:development": "webpack --mode development --config webpack.config.js",
     "lint": "tslint --project tsconfig.json 'src/**/*' 'test/**/*' 'example/**/*'",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest && npm run test:dist:development && npm run test:dist:production",
