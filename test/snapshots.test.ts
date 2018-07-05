@@ -1,6 +1,6 @@
 import "tsconfig-paths/register";
 import renderer from "react-test-renderer";
-import { ReactFromHtml } from "../src";
+import { ReactFromHtml } from "./entrypoint";
 
 describe("ReactFromHtml#parse", () => {
   const reactFromHtml = new ReactFromHtml();

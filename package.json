@@ -7,7 +7,10 @@
     "build": "webpack --mode production --config webpack.config.js && webpack --mode development --config webpack.config.js",
     "lint": "tslint --project tsconfig.json 'src/**/*' 'test/**/*' 'example/**/*'",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest",
+    "test": "jest && npm run test:dist:development && npm run test:dist:production",
+    "test:dist:development": "TEST_DIST=true NODE_ENV=development jest",
+    "test:dist:production": "TEST_DIST=true NODE_ENV=production jest",
+    "test:watch": "jest --watch",
     "test:updateSnapshot": "jest --updateSnapshot"
   },
   "contributors": [
