@@ -38,7 +38,7 @@ interface Prop {
 // convertToReactStyleName("-ms-transition") = "msTransition"
 function convertToReactStyleName(name: string) {
   return name
-    .replace(/^-ms/, "ms")
+    .replace(/^-ms\b/, "ms")
     .replace(/-(\w)/g, (_, firstChar: string) => {
       return firstChar.toUpperCase();
     });
