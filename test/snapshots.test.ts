@@ -80,6 +80,13 @@ describe("ReactFromHtml#parse", () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it("does not render react-reserved attributes", () => {
+    const tree = renderer
+      .create(reactFromHtml.parse("<div innerHTML=\"<input id='foo'/>\"/>"))
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it("renders elements with the style attribute", () => {
     const tree = renderer
       .create(

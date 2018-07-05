@@ -20,7 +20,8 @@ const ATTR_MAP: ReadonlyMap<string, PropertyInfoRecord> = (() => {
 
   const records = Object.values(properties) as Array<PropertyInfoRecord>;
   for (const record of records) {
-    map.set(record.attributeName, record);
+    // an attribute name is always lower-cased
+    map.set(record.attributeName.toLowerCase(), record);
   }
 
   return map;

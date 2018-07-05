@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ReactFromHtml#parse does not render react-reserved attributes 1`] = `<div />`;
+
 exports[`ReactFromHtml#parse renders <input/> with defaultValue 1`] = `
 <input
   defaultValue="foo"
