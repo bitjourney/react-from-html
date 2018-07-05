@@ -4,6 +4,7 @@
   "description": "Builds React Elements from HTML snippets, optimized for TypeScript projects",
   "main": "index.js",
   "scripts": {
+    "build:vendor": "make vendor-build",
     "build": "webpack --mode production --config webpack.config.js && webpack --mode development --config webpack.config.js",
     "lint": "tslint --project tsconfig.json 'src/**/*' 'test/**/*' 'example/**/*'",
     "lint:fix": "npm run lint -- --fix",
