@@ -1,6 +1,6 @@
 # rect-from-html
 
-[![Build Status](https://travis-ci.org/bitjourney/react-from-html.svg?branch=master)](https://travis-ci.org/bitjourney/react-from-html)
+[![Build Status](https://travis-ci.org/bitjourney/react-from-html.svg?branch=master)](https://travis-ci.org/bitjourney/react-from-html) [![npm version](https://badge.fury.io/js/%40bitjourney%2Freact-from-html.svg)](https://badge.fury.io/js/%40bitjourney%2Freact-from-html)
 
 This module provides a way to embed HTML snippets into React elements.
 Its behavior alikes `dangerouslySetInnerHTML`, but does as normal React elements.
