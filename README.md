@@ -4,6 +4,8 @@
 
 This module provides a way to embed HTML snippets into React elements.
 Its behavior alikes `dangerouslySetInnerHTML`, but does as normal React elements.
+In other words, this is the inverse of `ReactDOMServer.renderToString()`, which
+builds an HTML snippet from a React element.
 
 ## SYNOPSIS
 
@@ -17,7 +19,11 @@ const htmlSnippet = "<p>Hello, world!</p>";
 
 class Foo extends React.Component {
   render() {
-    return <>{reactFromHtml.parse(htmlSnippet)}</>;
+    if (Number.parseInt(React.version) >= 16) {
+     return reactFromHtml.parseToFragment(htmlSnippet);
+    } else {
+      return <div>{reactFromHtml.parseToNodeList(htmlSnippet)}</div>;
+    }
   }
 }
 ```
