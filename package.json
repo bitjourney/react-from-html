@@ -1,6 +1,6 @@
 {
   "name": "@bitjourney/react-from-html",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Builds React elements from HTML snippets, or a safe dangerouslySetInnerHTML alternative ",
   "main": "index.js",
   "scripts": {

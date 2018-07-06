@@ -1,5 +1,10 @@
 # The revision history of react-from-html
 
+## v0.3.0 2018/07/06
+
+* Remove `ReactFromHtml#parse()`
+  * Introduce `ReactFromHtml#parseToFragment()` and `#parseToNodeList()`
+
 ## v0.2.0 2018/07/05
 
 * Support React v15
