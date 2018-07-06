@@ -8,7 +8,7 @@ describe("ReactFromHtml#parse", () => {
   it("renders an SVG with style attributes", () => {
     const tree = renderer
       .create(
-        reactFromHtml.parse(`
+        reactFromHtml.parseToFragment(`
           <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="60" height="60">
             <rect width="60" height="60"/>
             <text text-anchor="middle" alignment-baseline="central" x="30" y="30" style="font-size: 15;fill: #327ac2;">Hello, world!</text>
@@ -23,7 +23,7 @@ describe("ReactFromHtml#parse", () => {
     // this SVG comes from https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Getting_Started
     const tree = renderer
       .create(
-        reactFromHtml.parse(`
+        reactFromHtml.parseToFragment(`
           <svg version="1.1"
             baseProfile="full"
             width="300" height="200"
@@ -42,7 +42,7 @@ describe("ReactFromHtml#parse", () => {
     // this SVG comes from https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Other_content_in_SVG
     const tree = renderer
       .create(
-        reactFromHtml.parse(`
+        reactFromHtml.parseToFragment(`
           <svg version="1.1"
               xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
               width="200" height="200">

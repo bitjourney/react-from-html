@@ -59,9 +59,20 @@ export class ReactFromHtml {
     return reactNodes;
   }
 
-  public parse(html: string): React.ReactElement<DynamicProps> {
+  public parseToNodeList(html: string): Array<React.ReactNode> {
     const nodeList = parseHtml(html);
-    // TODO: will use React.Fragment on react-from-html v1.0.0, dropping support of React v15
-    return <div>{this.nodesToReactNodes(nodeList)}</div>;
+    return this.nodesToReactNodes(nodeList);
+  }
+
+  /**
+   * @requires react v16.0.0 or later
+   */
+  public parseToFragment(html: string): React.ReactElement<DynamicProps> {
+    console.assert(React.Fragment, "requires React v16 or later");
+    return React.createElement(
+      React.Fragment,
+      {},
+      ...this.parseToNodeList(html)
+    );
   }
 }

@@ -1,128 +1,110 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ReactFromHtml#parse does not render react-reserved attributes 1`] = `
-<div>
-  <div />
-</div>
+exports[`ReactFromHtml#parseToFragment does not render react-reserved attributes 1`] = `<div />`;
+
+exports[`ReactFromHtml#parseToFragment renders <input/> with defaultValue 1`] = `
+<input
+  defaultValue="foo"
+  disabled={true}
+  size={10}
+  type="text"
+/>
 `;
 
-exports[`ReactFromHtml#parse renders <input/> with defaultValue 1`] = `
-<div>
+exports[`ReactFromHtml#parseToFragment renders <script/> with dangerouslySetInnerHTML 1`] = `
+<script
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "console.log('Hello <strong>React</strong> world!');",
+    }
+  }
+/>
+`;
+
+exports[`ReactFromHtml#parseToFragment renders <style/> with dangerouslySetInnerHTML 1`] = `
+<style
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "/* Hello <strong>React</strong> world! */",
+    }
+  }
+/>
+`;
+
+exports[`ReactFromHtml#parseToFragment renders <textarea/> with defaultValue, instead of children 1`] = `
+<textarea
+  defaultValue="/* Hello <strong>React</strong> world! */"
+/>
+`;
+
+exports[`ReactFromHtml#parseToFragment renders elements with the style attribute 1`] = `
+<label
+  style={
+    Object {
+      "color": "red",
+      "fontSize": "20px",
+      "fontWeight": "normal",
+      "opacity": 0.5,
+      "zIndex": 99,
+    }
+  }
+>
+  Hello, world!
+</label>
+`;
+
+exports[`ReactFromHtml#parseToFragment renders for as htmlFor 1`] = `
+<label
+  htmlFor="foo"
+>
   <input
-    defaultValue="foo"
-    disabled={true}
-    size={10}
-    type="text"
+    id="foo"
   />
-</div>
+</label>
 `;
 
-exports[`ReactFromHtml#parse renders <script/> with dangerouslySetInnerHTML 1`] = `
-<div>
-  <script
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "console.log('Hello <strong>React</strong> world!');",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`ReactFromHtml#parse renders <style/> with dangerouslySetInnerHTML 1`] = `
-<div>
-  <style
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "/* Hello <strong>React</strong> world! */",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`ReactFromHtml#parse renders <textarea/> with defaultValue, instead of children 1`] = `
-<div>
-  <textarea
-    defaultValue="/* Hello <strong>React</strong> world! */"
-  />
-</div>
-`;
-
-exports[`ReactFromHtml#parse renders elements with the style attribute 1`] = `
-<div>
-  <label
-    style={
-      Object {
-        "color": "red",
-        "fontSize": "20px",
-        "fontWeight": "normal",
-        "opacity": 0.5,
-        "zIndex": 99,
-      }
-    }
-  >
-    Hello, world!
-  </label>
-</div>
-`;
-
-exports[`ReactFromHtml#parse renders for as htmlFor 1`] = `
-<div>
-  <label
-    htmlFor="foo"
-  >
-    <input
-      id="foo"
-    />
-  </label>
-</div>
-`;
-
-exports[`ReactFromHtml#parse renders multiple blocks of HTML elements correctly 1`] = `
-<div>
-  
-          
+exports[`ReactFromHtml#parseToFragment renders multiple blocks of HTML elements correctly 1`] = `
+Array [
+  "
+          ",
   <p>
     Hello, 
     <strong>
       React
     </strong>
      world!
-  </p>
-  
-          
+  </p>,
+  "
+          ",
   <p>
     Hello, 
     <strong>
       React
     </strong>
      world!
-  </p>
-  
-          
+  </p>,
+  "
+          ",
   <p>
     Hello, 
     <strong>
       React
     </strong>
      world!
-  </p>
-  
-        
-</div>
+  </p>,
+  "
+        ",
+]
 `;
 
-exports[`ReactFromHtml#parse renders single block of HTML elements correctly 1`] = `
-<div>
-  <p
-    className="hello"
-  >
-    Hello, 
-    <strong>
-      React
-    </strong>
-     world!
-  </p>
-</div>
+exports[`ReactFromHtml#parseToFragment renders single block of HTML elements correctly 1`] = `
+<p
+  className="hello"
+>
+  Hello, 
+  <strong>
+    React
+  </strong>
+   world!
+</p>
 `;

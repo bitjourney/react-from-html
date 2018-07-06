@@ -2,13 +2,13 @@ import "tsconfig-paths/register";
 import renderer from "react-test-renderer";
 import { ReactFromHtml } from "./entrypoint";
 
-describe("ReactFromHtml#parse", () => {
+describe("ReactFromHtml#parseToFragment", () => {
   const reactFromHtml = new ReactFromHtml();
 
   it("renders single block of HTML elements correctly", () => {
     const tree = renderer
       .create(
-        reactFromHtml.parse(
+        reactFromHtml.parseToFragment(
           "<p class='hello'>Hello, <strong>React</strong> world!</p>"
         )
       )
@@ -19,7 +19,7 @@ describe("ReactFromHtml#parse", () => {
   it("renders multiple blocks of HTML elements correctly", () => {
     const tree = renderer
       .create(
-        reactFromHtml.parse(`
+        reactFromHtml.parseToFragment(`
           <p>Hello, <strong>React</strong> world!</p>
           <p>Hello, <strong>React</strong> world!</p>
           <p>Hello, <strong>React</strong> world!</p>
@@ -32,7 +32,7 @@ describe("ReactFromHtml#parse", () => {
   it("renders <script/> with dangerouslySetInnerHTML", () => {
     const tree = renderer
       .create(
-        reactFromHtml.parse(
+        reactFromHtml.parseToFragment(
           "<script>console.log('Hello <strong>React</strong> world!');</script>"
         )
       )
@@ -43,7 +43,7 @@ describe("ReactFromHtml#parse", () => {
   it("renders <style/> with dangerouslySetInnerHTML", () => {
     const tree = renderer
       .create(
-        reactFromHtml.parse(
+        reactFromHtml.parseToFragment(
           "<style>/* Hello <strong>React</strong> world! */</style>"
         )
       )
@@ -54,7 +54,7 @@ describe("ReactFromHtml#parse", () => {
   it("renders <textarea/> with defaultValue, instead of children", () => {
     const tree = renderer
       .create(
-        reactFromHtml.parse(
+        reactFromHtml.parseToFragment(
           "<textarea>/* Hello <strong>React</strong> world! */</textarea>"
         )
       )
@@ -65,7 +65,7 @@ describe("ReactFromHtml#parse", () => {
   it("renders <input/> with defaultValue", () => {
     const tree = renderer
       .create(
-        reactFromHtml.parse(
+        reactFromHtml.parseToFragment(
           "<input type='text' value='foo' size='10' disabled/>"
         )
       )
@@ -75,14 +75,20 @@ describe("ReactFromHtml#parse", () => {
 
   it("renders for as htmlFor", () => {
     const tree = renderer
-      .create(reactFromHtml.parse("<label for='foo'><input id='foo'/></label>"))
+      .create(
+        reactFromHtml.parseToFragment(
+          "<label for='foo'><input id='foo'/></label>"
+        )
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it("does not render react-reserved attributes", () => {
     const tree = renderer
-      .create(reactFromHtml.parse("<div innerHTML=\"<input id='foo'/>\"/>"))
+      .create(
+        reactFromHtml.parseToFragment("<div innerHTML=\"<input id='foo'/>\"/>")
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -90,7 +96,7 @@ describe("ReactFromHtml#parse", () => {
   it("renders elements with the style attribute", () => {
     const tree = renderer
       .create(
-        reactFromHtml.parse(
+        reactFromHtml.parseToFragment(
           "<label style='color: red; font-size: 20px; -webkit-font-smoothing: antialiased; opacity: 0.5; font-weight: normal; z-index: 99'>Hello, world!</div>"
         )
       )
