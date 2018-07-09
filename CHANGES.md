@@ -1,5 +1,9 @@
 # The revision history of react-from-html
 
+## v0.4.0 2018/07/09
+
+* Fix crashes when HTML snippets include comments
+
 ## v0.3.0 2018/07/06
 
 * Remove `ReactFromHtml#parse()`
