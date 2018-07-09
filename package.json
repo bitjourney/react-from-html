@@ -52,6 +52,7 @@
     "babel-plugin-inline-replace-variables": "^1",
     "jest": "^23",
     "jsdom": "^11",
+    "payment-icons": "^1",
     "react": "^16",
     "react-dom": "^16",
     "react-test-renderer": "^16",

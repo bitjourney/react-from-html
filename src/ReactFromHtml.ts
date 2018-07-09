@@ -21,7 +21,9 @@ export class ReactFromHtml {
     const props = {} as DynamicProps;
     const children = [] as Array<React.ReactNode>;
 
-    if (element.nodeName === "SCRIPT" || element.nodeName === "STYLE") {
+    if (element.nodeName === "#comment") {
+      return null;
+    } else if (element.nodeName === "SCRIPT" || element.nodeName === "STYLE") {
       if (element.firstChild) {
         props.dangerouslySetInnerHTML = {
           __html: (element.firstChild as Text).data

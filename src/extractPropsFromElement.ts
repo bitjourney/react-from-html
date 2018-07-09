@@ -134,6 +134,7 @@ export function extractPropsFromElement(
   element: Element
 ): Readonly<DynamicProps> {
   const attributes = element.attributes;
+  console.assert(attributes, `The element must have #attributes: ${element}`);
   const props = {} as DynamicProps;
   for (let i = 0, len = attributes.length; i < len; i++) {
     const prop = attrToProp(element, attributes[i]);
