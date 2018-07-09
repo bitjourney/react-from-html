@@ -62,7 +62,7 @@ describe("ReactFromHtml#parse", () => {
       return /\.svg$/.test(basename);
     })
     .forEach(basename => {
-      it(`renders a real-world SVG (${basename}) copied from ${svgDirname}`, () => {
+      it(`renders a real-world SVG (${basename}) borrowed from the payment-icons module`, () => {
         const svg = fs.readFileSync(`${svgDirname}/${basename}`);
         const tree = renderer
           .create(reactFromHtml.parseToFragment(svg))

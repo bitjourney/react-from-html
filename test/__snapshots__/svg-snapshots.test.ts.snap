@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ReactFromHtml#parse renders a real-world SVG (alipay.svg) copied from /Users/gfx/.ghq/github.com/bitjourney/react-from-html/test/../node_modules/payment-icons/svg/flat 1`] = `
+exports[`ReactFromHtml#parse renders a real-world SVG (alipay.svg) borrowed from the payment-icons module 1`] = `
 Array [
   <svg
     height="471"
@@ -72,7 +72,7 @@ Array [
 ]
 `;
 
-exports[`ReactFromHtml#parse renders a real-world SVG (amex.svg) copied from /Users/gfx/.ghq/github.com/bitjourney/react-from-html/test/../node_modules/payment-icons/svg/flat 1`] = `
+exports[`ReactFromHtml#parse renders a real-world SVG (amex.svg) borrowed from the payment-icons module 1`] = `
 Array [
   <svg
     height="471"
@@ -146,7 +146,7 @@ Array [
 ]
 `;
 
-exports[`ReactFromHtml#parse renders a real-world SVG (default.svg) copied from /Users/gfx/.ghq/github.com/bitjourney/react-from-html/test/../node_modules/payment-icons/svg/flat 1`] = `
+exports[`ReactFromHtml#parse renders a real-world SVG (default.svg) borrowed from the payment-icons module 1`] = `
 Array [
   <svg
     height="471"
@@ -429,7 +429,7 @@ Array [
 ]
 `;
 
-exports[`ReactFromHtml#parse renders a real-world SVG (diners.svg) copied from /Users/gfx/.ghq/github.com/bitjourney/react-from-html/test/../node_modules/payment-icons/svg/flat 1`] = `
+exports[`ReactFromHtml#parse renders a real-world SVG (diners.svg) borrowed from the payment-icons module 1`] = `
 Array [
   <svg
     height="471"
@@ -510,7 +510,7 @@ Array [
 ]
 `;
 
-exports[`ReactFromHtml#parse renders a real-world SVG (discover.svg) copied from /Users/gfx/.ghq/github.com/bitjourney/react-from-html/test/../node_modules/payment-icons/svg/flat 1`] = `
+exports[`ReactFromHtml#parse renders a real-world SVG (discover.svg) borrowed from the payment-icons module 1`] = `
 Array [
   <svg
     height="471"
@@ -580,7 +580,7 @@ Array [
 ]
 `;
 
-exports[`ReactFromHtml#parse renders a real-world SVG (elo.svg) copied from /Users/gfx/.ghq/github.com/bitjourney/react-from-html/test/../node_modules/payment-icons/svg/flat 1`] = `
+exports[`ReactFromHtml#parse renders a real-world SVG (elo.svg) borrowed from the payment-icons module 1`] = `
 Array [
   <svg
     height="471"
@@ -679,7 +679,7 @@ Array [
 ]
 `;
 
-exports[`ReactFromHtml#parse renders a real-world SVG (hipercard.svg) copied from /Users/gfx/.ghq/github.com/bitjourney/react-from-html/test/../node_modules/payment-icons/svg/flat 1`] = `
+exports[`ReactFromHtml#parse renders a real-world SVG (hipercard.svg) borrowed from the payment-icons module 1`] = `
 Array [
   <svg
     height="471"
@@ -742,7 +742,7 @@ Array [
 ]
 `;
 
-exports[`ReactFromHtml#parse renders a real-world SVG (jcb.svg) copied from /Users/gfx/.ghq/github.com/bitjourney/react-from-html/test/../node_modules/payment-icons/svg/flat 1`] = `
+exports[`ReactFromHtml#parse renders a real-world SVG (jcb.svg) borrowed from the payment-icons module 1`] = `
 Array [
   <svg
     height="471"
@@ -905,7 +905,7 @@ Array [
 ]
 `;
 
-exports[`ReactFromHtml#parse renders a real-world SVG (maestro.svg) copied from /Users/gfx/.ghq/github.com/bitjourney/react-from-html/test/../node_modules/payment-icons/svg/flat 1`] = `
+exports[`ReactFromHtml#parse renders a real-world SVG (maestro.svg) borrowed from the payment-icons module 1`] = `
 Array [
   <svg
     height="471"
@@ -1013,7 +1013,7 @@ Array [
 ]
 `;
 
-exports[`ReactFromHtml#parse renders a real-world SVG (maestro-old.svg) copied from /Users/gfx/.ghq/github.com/bitjourney/react-from-html/test/../node_modules/payment-icons/svg/flat 1`] = `
+exports[`ReactFromHtml#parse renders a real-world SVG (maestro-old.svg) borrowed from the payment-icons module 1`] = `
 Array [
   <svg
     height="471"
@@ -1192,7 +1192,7 @@ Array [
 ]
 `;
 
-exports[`ReactFromHtml#parse renders a real-world SVG (mastercard.svg) copied from /Users/gfx/.ghq/github.com/bitjourney/react-from-html/test/../node_modules/payment-icons/svg/flat 1`] = `
+exports[`ReactFromHtml#parse renders a real-world SVG (mastercard.svg) borrowed from the payment-icons module 1`] = `
 Array [
   <svg
     height="471"
@@ -1298,7 +1298,7 @@ Array [
 ]
 `;
 
-exports[`ReactFromHtml#parse renders a real-world SVG (mastercard-old.svg) copied from /Users/gfx/.ghq/github.com/bitjourney/react-from-html/test/../node_modules/payment-icons/svg/flat 1`] = `
+exports[`ReactFromHtml#parse renders a real-world SVG (mastercard-old.svg) borrowed from the payment-icons module 1`] = `
 Array [
   <svg
     height="471"
@@ -1512,7 +1512,7 @@ Array [
 ]
 `;
 
-exports[`ReactFromHtml#parse renders a real-world SVG (paypal.svg) copied from /Users/gfx/.ghq/github.com/bitjourney/react-from-html/test/../node_modules/payment-icons/svg/flat 1`] = `
+exports[`ReactFromHtml#parse renders a real-world SVG (paypal.svg) borrowed from the payment-icons module 1`] = `
 Array [
   <svg
     height="471"
@@ -1619,7 +1619,7 @@ Array [
 ]
 `;
 
-exports[`ReactFromHtml#parse renders a real-world SVG (security-code.svg) copied from /Users/gfx/.ghq/github.com/bitjourney/react-from-html/test/../node_modules/payment-icons/svg/flat 1`] = `
+exports[`ReactFromHtml#parse renders a real-world SVG (security-code.svg) borrowed from the payment-icons module 1`] = `
 Array [
   <svg
     height="471"
@@ -1953,7 +1953,7 @@ Array [
 ]
 `;
 
-exports[`ReactFromHtml#parse renders a real-world SVG (unionpay.svg) copied from /Users/gfx/.ghq/github.com/bitjourney/react-from-html/test/../node_modules/payment-icons/svg/flat 1`] = `
+exports[`ReactFromHtml#parse renders a real-world SVG (unionpay.svg) borrowed from the payment-icons module 1`] = `
 Array [
   <svg
     height="471"
@@ -2069,7 +2069,7 @@ Array [
 ]
 `;
 
-exports[`ReactFromHtml#parse renders a real-world SVG (verve.svg) copied from /Users/gfx/.ghq/github.com/bitjourney/react-from-html/test/../node_modules/payment-icons/svg/flat 1`] = `
+exports[`ReactFromHtml#parse renders a real-world SVG (verve.svg) borrowed from the payment-icons module 1`] = `
 Array [
   <svg
     height="471"
@@ -2173,7 +2173,7 @@ Array [
 ]
 `;
 
-exports[`ReactFromHtml#parse renders a real-world SVG (visa.svg) copied from /Users/gfx/.ghq/github.com/bitjourney/react-from-html/test/../node_modules/payment-icons/svg/flat 1`] = `
+exports[`ReactFromHtml#parse renders a real-world SVG (visa.svg) borrowed from the payment-icons module 1`] = `
 Array [
   <svg
     height="471"
