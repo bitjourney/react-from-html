@@ -1,6 +1,7 @@
 import "tsconfig-paths/register";
 import renderer from "react-test-renderer";
 import { ReactFromHtml } from "./entrypoint";
+import fs from "fs";
 
 describe("ReactFromHtml#parse", () => {
   const reactFromHtml = new ReactFromHtml();
@@ -54,4 +55,19 @@ describe("ReactFromHtml#parse", () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  const svgDirname = `${__dirname}/../node_modules/payment-icons/svg/flat`;
+  fs.readdirSync(svgDirname)
+    .filter(basename => {
+      return /\.svg$/.test(basename);
+    })
+    .forEach(basename => {
+      it(`renders a real-world SVG (${basename}) copied from ${svgDirname}`, () => {
+        const svg = fs.readFileSync(`${svgDirname}/${basename}`);
+        const tree = renderer
+          .create(reactFromHtml.parseToFragment(svg))
+          .toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
 });
