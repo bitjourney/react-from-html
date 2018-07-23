@@ -20,8 +20,14 @@ module.exports = (env, argv) => {
     },
 
     externals: {
-      react: {
+      'react': {
         commonjs: 'react',
+      },
+      'crypto-js/sha1': {
+        commonjs: 'crypto-js/sha1',
+      },
+      'crypto-js/enc-hex': {
+        commonjs: 'crypto-js/enc-hex',
       },
     },
 
