@@ -1,5 +1,9 @@
 # The revision history of react-from-html
 
+## v0.5.0 2018/07/23
+
+* Fix `key` attribute to be correct ([#3](https://github.com/bitjourney/react-from-html/pull/3))
+
 ## v0.4.0 2018/07/09
 
 * Fix crashes when HTML snippets include comments
