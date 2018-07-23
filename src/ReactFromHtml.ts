@@ -2,16 +2,37 @@ import React from "react";
 import { parseHtml } from "./parseHtml";
 import { DynamicProps } from "./DynamicProps";
 import { extractPropsFromElement } from "./extractPropsFromElement";
+import sha1 from "crypto-js/sha1";
+import hex from "crypto-js/enc-hex";
 
-export interface ReactFromHtmlOptions {
-  replace?(node: Node, props: object): React.ReactChild;
+function sha1hex(s: string): string {
+  return hex.stringify(sha1(s));
 }
 
-export class ReactFromHtml {
-  readonly replace: (node: Node, props: DynamicProps) => React.ReactNode;
+export interface ReactFromHtmlOptions {
+  replace(node: Node, props: DynamicProps): React.ReactNode;
+  digest(node: Node, index: number): string;
+}
 
-  constructor(options: ReactFromHtmlOptions = {}) {
+export class ReactFromHtml implements ReactFromHtmlOptions {
+  readonly replace: (node: Node, props: DynamicProps) => React.ReactNode;
+  readonly digest: (node: Node, index: number) => string;
+
+  constructor(options: Partial<ReactFromHtmlOptions> = {}) {
     this.replace = options.replace || this.nodeToReactNode.bind(this);
+    this.digest = options.digest || this.sha1digest.bind(this);
+  }
+
+  private sha1digest(node: Node, index: number): string {
+    if (node.nodeName === "#comment") {
+      return `${index}/${node.nodeName}`;
+    } else if (node.nodeName === "#text") {
+      return `${index}/${node.nodeName}/${sha1hex((node as Text).data)}`;
+    } else {
+      return `${index}/${node.nodeName}/${sha1hex(
+        (node as Element).outerHTML
+      )}`;
+    }
   }
 
   private elementToReactNode(
@@ -55,7 +76,9 @@ export class ReactFromHtml {
   private nodesToReactNodes(nodes: ArrayLike<Node>): Array<React.ReactNode> {
     const reactNodes: Array<React.ReactNode> = [];
     for (let i = 0, len = nodes.length; i < len; i++) {
-      const reactNode = this.replace(nodes[i], { key: i });
+      const reactNode = this.replace(nodes[i], {
+        key: this.digest(nodes[i], i)
+      });
       reactNodes.push(reactNode);
     }
     return reactNodes;

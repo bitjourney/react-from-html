@@ -103,4 +103,29 @@ describe("ReactFromHtml#parseToFragment", () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it("renders Text nodes", () => {
+    const tree = renderer
+      .create(reactFromHtml.parseToFragment("Hello, world!"))
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it("renders Comment nodes", () => {
+    const tree = renderer
+      .create(reactFromHtml.parseToFragment("<!-- Hello, world! -->"))
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it("renders Text and Comment nodes", () => {
+    const tree = renderer
+      .create(
+        reactFromHtml.parseToFragment(
+          "<!-- component -->Hello<!-- comment -->, world!<!-- /component -->"
+        )
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
