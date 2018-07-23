@@ -37,6 +37,17 @@ exports[`ReactFromHtml#parseToFragment renders <textarea/> with defaultValue, in
 />
 `;
 
+exports[`ReactFromHtml#parseToFragment renders Comment nodes 1`] = `null`;
+
+exports[`ReactFromHtml#parseToFragment renders Text and Comment nodes 1`] = `
+Array [
+  "Hello",
+  ", world!",
+]
+`;
+
+exports[`ReactFromHtml#parseToFragment renders Text nodes 1`] = `"Hello, world!"`;
+
 exports[`ReactFromHtml#parseToFragment renders elements with the style attribute 1`] = `
 <label
   style={
