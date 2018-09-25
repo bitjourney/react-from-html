@@ -3,7 +3,7 @@ const { defaults } = require('jest-config');
 module.exports = {
   globals: {
     "ts-jest": {
-      enableTsDiagnostics: true,
+      diagnostics: true,
     },
   },
   transform: {
