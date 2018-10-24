@@ -1,5 +1,5 @@
 import "./setup";
-import * as DOMProperty from "react-dom-shared/DOMProperty";
+import * as DOMProperty from "react-dom.shared/DOMProperty";
 
 console.log(DOMProperty.properties);
 console.log("---------");

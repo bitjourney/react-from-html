@@ -5,8 +5,8 @@ import {
   NUMERIC,
   POSITIVE_NUMERIC,
   properties
-} from "react-dom-shared/DOMProperty";
-import { isUnitlessNumber } from "react-dom-shared/CSSProperty";
+} from "react-dom.shared/DOMProperty";
+import { isUnitlessNumber } from "react-dom.shared/CSSProperty";
 
 interface PropertyInfoRecord {
   type: number;
