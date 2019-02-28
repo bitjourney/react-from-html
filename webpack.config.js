@@ -2,7 +2,6 @@
 const path = require('path');
 
 const webpack = require("webpack");
-const atLoader = require("awesome-typescript-loader");
 
 module.exports = (env, argv) => {
   const config = {
@@ -16,7 +15,7 @@ module.exports = (env, argv) => {
 
     resolve: {
       modules: ["src", "node_modules", "vendor-build"],
-      extensions: [".js", ".ts", ".tsx"],
+      extensions: [".ts", ".tsx", ".js"],
     },
 
     externals: {
@@ -32,7 +31,6 @@ module.exports = (env, argv) => {
     },
 
     plugins: [
-      new atLoader.CheckerPlugin(),
       new webpack.optimize.LimitChunkCountPlugin({
         maxChunks: 1, // suppress code splitting
       }),
@@ -43,10 +41,9 @@ module.exports = (env, argv) => {
           test: /\.(?:ts|tsx)$/,
           exclude: /node_modules/,
           use: {
-            loader: "awesome-typescript-loader",
+            loader: "ts-loader",
             options: {
-              configFileName: "tsconfig.webpack.json",
-              useCache: true,
+              configFile: "tsconfig.webpack.json",
             },
           },
         },
