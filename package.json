@@ -2,6 +2,10 @@
   "name": "@bitjourney/react-from-html",
   "version": "0.6.0",
   "description": "Builds React elements from HTML snippets, or a safe dangerouslySetInnerHTML alternative ",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitjourney/react-from-html"
+  },
   "main": "index.js",
   "scripts": {
     "build:vendor": "make vendor-build",
