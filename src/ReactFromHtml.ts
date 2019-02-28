@@ -1,5 +1,4 @@
 import React from "react";
-import { parseHtml } from "./parseHtml";
 import { DynamicProps } from "./DynamicProps";
 import { extractPropsFromElement } from "./extractPropsFromElement";
 import sha1 from "crypto-js/sha1";
@@ -12,15 +11,20 @@ function sha1hex(s: string): string {
 export interface ReactFromHtmlOptions {
   replace(node: Node, props: DynamicProps): React.ReactNode;
   digest(node: Node, index: number): string;
+  domParser: DOMParser;
 }
 
 export class ReactFromHtml implements ReactFromHtmlOptions {
   readonly replace: (node: Node, props: DynamicProps) => React.ReactNode;
   readonly digest: (node: Node, index: number) => string;
+  readonly domParser: DOMParser;
 
   constructor(options: Partial<ReactFromHtmlOptions> = {}) {
     this.replace = options.replace || this.nodeToReactNode.bind(this);
     this.digest = options.digest || this.sha1digest.bind(this);
+
+    // NOTE: DOMParser does not exist on NodeJS environment.
+    this.domParser = options.domParser || new DOMParser();
   }
 
   private sha1digest(node: Node, index: number): string {
@@ -85,8 +89,8 @@ export class ReactFromHtml implements ReactFromHtmlOptions {
   }
 
   public parseToNodeList(html: string): Array<React.ReactNode> {
-    const nodeList = parseHtml(html);
-    return this.nodesToReactNodes(nodeList);
+    const doc = this.domParser.parseFromString("<body>" + html, "text/html");
+    return this.nodesToReactNodes(doc.body.childNodes);
   }
 
   /**

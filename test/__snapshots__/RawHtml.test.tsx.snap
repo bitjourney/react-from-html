@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RawHtml/> renders HTML snippets with global DOMParser() 1`] = `
+<p
+  className="hello"
+>
+  Hello, 
+  <strong>
+    React
+  </strong>
+   world!
+</p>
+`;
+
+exports[`<RawHtml/> renders HTML snippets with jsdom 1`] = `
+<p
+  className="hello"
+>
+  Hello, 
+  <strong>
+    React
+  </strong>
+   world!
+</p>
+`;
