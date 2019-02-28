@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RawHtml/> renders single block of HTML elements correctly 1`] = `
+<p
+  className="hello"
+>
+  Hello, 
+  <strong>
+    React
+  </strong>
+   world!
+</p>
+`;

@@ -24,4 +24,4 @@ test: build
 clean:
 	rm -rf build dist vendor-build
 
-.PHONEY: all build clean
+.PHONEY: all build clean test
