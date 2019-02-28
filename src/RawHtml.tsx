@@ -8,11 +8,8 @@ export interface Props {
 
 export const RawHtml: React.FC<Props> = function(props) {
   const domParser = useDOMParser();
-
-  const reactNode = useMemo(() => {
+  return useMemo(() => {
     const reactFromHtml = new ReactFromHtml({ domParser });
     return reactFromHtml.parseToFragment(props.html);
   }, [props.html]);
-
-  return reactNode;
 };
