@@ -1,5 +1,10 @@
 # The revision history of react-from-html
 
+## v0.6.0 2019/02/28
+
+* `<RawHtml html="...">` for SSR
+  * it requires `<DOMParserContext.Provider/>` for `DOMParser` instance
+
 ## v0.5.0 2018/07/23
 
 * Fix `key` attribute to be correct ([#3](https://github.com/bitjourney/react-from-html/pull/3))
