@@ -58,7 +58,7 @@
     "ts-loader": "^6.1.2",
     "babel-plugin-inline-replace-variables": "^1",
     "jest": "^24",
-    "jsdom": "^11",
+    "jsdom": "^15",
     "payment-icons": "^1",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
