@@ -11,7 +11,7 @@ builds an HTML snippet from a React element.
 
 ```tsx
 import React from "react";
-import { ReactFromHtml } from "react-from-html";
+import { ReactFromHtml } from "@bitjourney/react-from-html";
 
 const reactFromHtml = new ReactFromHtml();
 
